@@ -99,8 +99,8 @@ http://2157.liveplay.myqcloud.com/2157_358535a.m3u8 // m3u8 playback address
 ![](https://main.qcloudimg.com/raw/f5444cbd256ace4033e37bb1206bc90d.png)
 
 If you want to play the video of this URL on the mobile browser, the Javascript code is as follows:
-<dx-codeblock>
-::: javascript javascript
+
+```
 var player = new TcPlayer('id_test_video', {
 "m3u8": "http://2157.liveplay.myqcloud.com/2157_358535a.m3u8", //Please replace with the actual available playback address
 "autoplay": true, //The safari browser under iOS and most mobile browsers do not open the ability to automatically play videos
@@ -108,15 +108,14 @@ var player = new TcPlayer('id_test_video', {
 "width": '480',//The display width of the video, please try to use the video resolution width
 "height": '320'//The display height of the video, please try to use the video resolution height
 });
-:::
-</dx-codeblock>
+```
 
 This code can support playing HLS (M3U8) protocol live video on PC and mobile browsers. Although the HLS (M3U8) protocol has good video compatibility, some Android phones still do not support it. The delay is high, about 20 seconds. The above delay.
 
 #### 3.2 Achieve lower latency
 The PC browser supports Flash, and the Javascript code is as follows:
-<dx-codeblock>
-::: javascript javascript
+
+```
 var player = new TcPlayer('id_test_video', {
 "m3u8": "http://2157.liveplay.myqcloud.com/2157_358535a.m3u8",
 "flv": "http://2157.liveplay.myqcloud.com/live/2157_358535a.flv", //Add a flv playback address for PC platform playback, please replace it with the actual available playback address
@@ -125,8 +124,7 @@ var player = new TcPlayer('id_test_video', {
 "width": '480',//The display width of the video, please try to use the video resolution width
 "height": '320'//The display height of the video, please try to use the video resolution height
 });
-:::
-</dx-codeblock>
+```
 
 The FLV playback address is added to this code. If the Web player finds that the current browser is a PC browser, it will actively select the FLV link to achieve lower latency. If you have higher requirements for latency, you can use WebRTC to pull the streaming address. A WebRTC-based playback system can achieve ultra-low latency (500ms). The prerequisite is that all the streaming addresses can be streamed. If you use Tencent Cloud's video There is no need to consider live broadcast services, because Tencent Cloud’s live broadcast channels support WebRTC, FLV, RTMP and HLS (M3U8) broadcast protocols by default.
 
@@ -205,8 +203,8 @@ http://200002949.vod.myqcloud.com/200002949_b6ffc.f220.av.m3u8 // SD
 
 #### 5.2 Code Implementation
 The code implementation of multi-definition support is as follows:
-<dx-codeblock>
-::: javascript javascript
+
+```
 var player = new TcPlayer('id_test_video', {
 "m3u8": "http://200002949.vod.myqcloud.com/200002949_b6ffc.f240.m3u8",//Please replace with the actual available playback address
 "m3u8_hd": "http://200002949.vod.myqcloud.com/200002949_b6ffc.f230.av.m3u8",
@@ -214,8 +212,7 @@ var player = new TcPlayer('id_test_video', {
 "autoplay": true, //The safari browser under iOS and most mobile browsers do not allow the ability to automatically play videos
 "poster": "http://www.test.com/myimage.jpg",
 });
-:::
-</dx-codeblock>
+```
 
 #### 5.3 Realizing the use case
 Use multiple resolution settings and switching functions. The online example is as follows. Right-click [View Page Source] in the PC browser to view the code implementation of the page, please refer to [Resolution Switching](https://web.sdk.qcloud.com/player/tcplayerlite/ tcplayer-clarity.html).
@@ -230,8 +227,8 @@ The web player supports prompt customization.
 
 #### 6.1 Code Implementation
 The following is the core code for the player to support custom prompts, and the prompts are mainly set on the wording property.
-<dx-codeblock>
-::: javascript javascript
+
+```
 var player = new TcPlayer('id_test_video', {
 "m3u8": "http://200002949.vod.myqcloud.com/200002949_b6ffc.f0.m3u8",//Please replace with the actual available playback address
 "autoplay": true, // safari browser does not open this capability under iOS
@@ -241,8 +238,7 @@ var player = new TcPlayer('id_test_video', {
 2048: "Failed to request the m3u8 file, it may be a network error or a cross-domain problem"
 }
 });
-:::
-</dx-codeblock>
+```
 
 #### 6.2 Realization of use cases
 The video playback failed, and the function of custom prompt copy was used at the same time. The online example is as follows, right-click [View Page Source] in the PC browser to view the code implementation of the page:
