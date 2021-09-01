@@ -250,7 +250,7 @@ https://web.sdk.qcloud.com/player/tcplayerlite/tcplayer-error.html
 
 #### 6.3 Error code table
 | Code | Prompt | Description |
-|-------|-----------|----------------------------- ----------|
+|-------|-----------|---------------------------------------|
 | 1 | Network error, please check the network configuration or playback link is correct. | H5 indicates the error. |
 | 2 | Network error, please check the network configuration or playback link is correct. | Video format Web player cannot decode. <br>H5 prompt error. |
 | 3 | Video decoding error. | H5 indicates the error. |
